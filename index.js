@@ -11,9 +11,6 @@ const Token = process.env.BOT_TOKEN || "6268859723:AAHcb3ZiN2WQapIXWDRnhtamHL06C
 const bot = new Telegraf(Token);
 const port = process.env.PORT || 8080;
 
-app.listen(port,() => {
-  console.log("Open http://localhost:"+port);
-});
 
 app.get("/",async(req,res) => {
   res.send("<h1>Bot ini sudah berjalan silahkan coba</h1>");
@@ -85,4 +82,8 @@ bot.on("message",async(ctx) => {
   console.log(result);
 });
 
-bot.launch();
+app.listen(port,() => {
+  console.log("Open http://localhost:"+port);
+  bot.launch();
+});
+
