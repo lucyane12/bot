@@ -7,7 +7,7 @@ const { waifu,
         bunny,
         genshin,
         osakana } = require("zeev.io");
-const Token = "6268859723:AAHcb3ZiN2WQapIXWDRnhtamHL06C1tstT8";
+const Token = process.env.BOT_TOKEN || "6268859723:AAHcb3ZiN2WQapIXWDRnhtamHL06C1tstT8";
 const bot = new Telegraf(Token);
 const port = process.env.PORT || 8080;
 
